@@ -17,9 +17,15 @@ File Structure:
 This program depends on the following structure and file placement:
 
 root
+
 --Questions
+
 ----Active
+
 ------#files go here to be used
+
 ----Inactive
+
 ------#files go here when not in use
+
 --Config.ini
