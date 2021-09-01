@@ -121,7 +121,7 @@ public class Main {
                     JOptionPane.showMessageDialog(null, "Incorrect, the correct answer was: " + termsVector.elementAt(questions.elementAt(termTested)).getEnTerm());
                 }
                 break;
-                default: JOptionPane.showMessageDialog(null, "I'm sorry, I didn't recognize your input");
+                default: JOptionPane.showMessageDialog(null, "I'm sorry, I didn't recognize your input\r\n" + "The Correct answer was " + termsVector.elementAt(questions.elementAt(termTested)).getEnTerm());
             }
 
 
