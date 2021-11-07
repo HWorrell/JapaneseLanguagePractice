@@ -87,12 +87,34 @@ public class Main {
             //populate four random terms into the vector
             for(int jj = 0; jj < 4; jj++){
                 int q = rand.nextInt(termsVector.size());
-                //make sure we're not adding it again
-                if (!questions.contains(q)) {
-                    questions.add(q);
-                } else{
-                    //deincrement if we don't populate something, otherwise we overflow the array size.  
-                    jj--;
+                if (questionHistoryVector.contains(q)){
+                    if (rand.nextInt(10) > 2){
+                        jj--;
+                        System.out.println("Rerolling due to repeat (number:" + questionHistoryVector.size() + ")" +
+                                "" +
+                                "" +
+                                "");
+                    }
+                    else{
+                        //make sure we're not adding it again
+                        if (!questions.contains(q)) {
+                            questions.add(q);
+                            numHolding[jj] = q;
+                        } else {
+                            //deincrement if we don't populate something, otherwise we overflow the array size.
+                            jj--;
+                        }
+                    }
+                }
+                else{
+                    //make sure we're not adding it again
+                    if (!questions.contains(q)) {
+                        questions.add(q);
+                        numHolding[jj] = q;
+                    } else {
+                        //deincrement if we don't populate something, otherwise we overflow the array size.
+                        jj--;
+                    }
                 }
             }
 
