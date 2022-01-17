@@ -38,6 +38,9 @@ public class Main {
         //vector for terms to be tested on
         Vector<Terms> termsVector = new Vector<>();
         //for each file in the array
+        
+        Vector<Integer> questionHistoryVector = new Vector<>();
+
         for (File f: dir
              ) {
 
@@ -81,6 +84,8 @@ public class Main {
         //initialize random
         Random rand = new Random();
 
+        int[] numHolding = new int[4];
+        
         for(int i = 0; i < results; i++){
             //store the absolute index numbers of the questions we're testing on it in this vector
             Vector<Integer> questions = new Vector<>();
